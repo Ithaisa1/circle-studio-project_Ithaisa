@@ -99,6 +99,8 @@ textarea {
 .nav-linlks a:hover::after {
   width: 100%;
 } */
+
+
 .nav-links a {
   position: relative;
   display: inline-block;
@@ -163,7 +165,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 32px;
   padding: 15px 28px;
   font-weight: 700;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -176,13 +178,18 @@ textarea {
 }
 
 .btn-secondary {
-  color: var(--Primary);
+  background-color: var(--NeutralDark);
+  color: var(--White);
 }
 
 .btn:hover {
   transform: translateY(-2px);
   opacity: 0.95;
+  background-color: var(--Primary);
+
 }
+
+
 
 .hero-images {
   position: relative;
@@ -330,32 +337,36 @@ textarea {
 }
 
 .testimonial-text p {
-  color: var(--PrimaryLight);
+  color: var(--SecondaryLight);
   font-size: 1.05rem;
   line-height: 1.8;
 }
 
 .testimonial-profile {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 18px;
 }
 
 .testimonial-profile-img {
+  width: 80px;
+  height: 80px;
   
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+  border-radius: 60%;
+  
 }
 
 .testimonial-profile-info .name {
-  
+  text-align: center;
   font-weight: 700;
   color: var(--PrimaryLight);
 }
 
 .testimonial-profile-info .origin {
+  text-align: center;
   color: var(--White);
 }
 
