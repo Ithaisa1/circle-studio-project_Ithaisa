@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Circle Agency - projects</title>
 </head>
 <body>
-    
+
+    <!-- Header -->
+
+    <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html"><img class="logo" src="../assets/logos/circle.svg" alt="Circle"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="../index.html#services">Services</a>
+      </nav>
+      <a class="btn btn-secondary" href="#contact">Contact Us</a>
+    </div>
+  </header>
+
+
+  <!-- Projects -->
+
+
+  <section id="projects">
+      <h2>Projects</h2>
+      <div id="projects-list" class="projects-container">
+        <article class="project-card">
+          <img src="../assets/projects-section/1.jpg" alt="Project Simplify">
+          <div class="project-inner-card">
+            <h3 class="project-title">Simplify</h3>
+            <p class="project-description">UI Design & App Development</p>
+            <a class="learn-more" href="./projects.html?id=1">Learn more</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="../assets/projects-section/2.jpg" alt="Project Dashcoin">
+          <div class="project-inner-card">
+            <h3 class="project-title">Dashcoin</h3>
+            <p class="project-description">Web Development</p>
+            <a class="learn-more" href="./projects.html?id=2">Learn more</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="../assets/projects-section/3.jpg" alt="Project Vectorify">
+          <div class="project-inner-card">
+            <h3 class="project-title">Vectorify</h3>
+            <p class="project-description">User Experience Design</p>
+            <a class="learn-more" href="./projects.html?id=3">Learn more</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Project detail -->
+
+      <div id="project-detail" class="project-detail" aria-hidden="true">
+        <a class="learn-more" id="detail-back" href="./projects.html">← Back to all projects</a>
+        <div class="project-detail-card">
+          <img id="detail-image" src="" alt="Project detail image">
+          <div class="project-detail-content">
+            <h2 id="detail-title"></h2>
+            <p id="detail-subtitle" class="project-description"></p>
+            <p id="detail-description"></p>
+            <ul id="detail-features" class="project-features"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+
+    <section id="contact" class="newsletter">
+      <div class="newsletter-inner">
+        <div>
+          <p>Do you have any questions?</p>
+          <h2>Let us help you!</h2>
+        </div>
+        <form action="#">
+          <input type="email" placeholder="Enter your email" required>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="../index.html"><img class="logo" src="../assets/logos/circle.svg" alt="Circle"></a>
+      <nav>
+        <a href="#">Team</a>
+        <a href="../index.html#services">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Press</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Privacy Policy</a>
+      </nav>
+      <p>2972 Westheimer Rd. Santa Ana,<br>Illinois 85486</p>
+    </div>
+  </footer>
 </body>
 </html>
