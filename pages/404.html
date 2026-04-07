@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Página no encontrada | Circle Studio</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="error-page">
+    <div class="error-stars"></div>
+    <section class="error-content">
+      <div class="error-bubble">
+        <span class="error-number">404</span>
+        <span class="error-smile">😅</span>
+      </div>
+      <h1>¡Uh-oh! La página se perdió en el espacio</h1>
+      <p>El link no existe, pero no te preocupes: tenemos una puerta de regreso al planeta inicio.</p>
+
+      <div class="error-actions">
+        <a href="../index.html" class="btn btn-primary">Regresar al inicio</a>
+        <button class="btn btn-secondary" type="button" id="fact-button">¡Dame un dato!</button>
+      </div>
+
+      <div class="fun-fact">Haz clic en el botón para descubrir un dato loco.</div>
+
+      <div class="error-game">
+        <p>¿Te atreves a tocar las estrellas fugaces?</p>
+        <div class="stars-grid">
+          <span class="star" data-points="10">⭐</span>
+          <span class="star" data-points="15">🌟</span>
+          <span class="star" data-points="20">✨</span>
+        </div>
+        <div class="star-score">Puntos: <strong id="star-score">0</strong></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const facts = [
+      'El código 404 nació en 1992 cuando un servidor del CERN no encontró una página.',
+      'El número 404 se suele usar en películas para hacer bromas dentro de la web.',
+      'Las páginas 404 creativas son perfectas para mostrar estilo y personalidad.',
+      'Algunas 404 tienen juegos, mascotas y animaciones locas como esta.',
+      'Si sigues tocando estrellas, tu puntuación aumentará hasta que vuelvas a casa.'
+    ];
+
+    const funFactElement = document.querySelector('.fun-fact');
+    const factButton = document.getElementById('fact-button');
+    const stars = document.querySelectorAll('.star');
+    const starScore = document.getElementById('star-score');
+    let score = 0;
+
+    function showFunFact() {
+      const random = facts[Math.floor(Math.random() * facts.length)];
+      funFactElement.textContent = random;
+      funFactElement.classList.add('visible');
+    }
+
+    function addStarPoints(event) {
+      const points = Number(event.target.dataset.points) || 5;
+      score += points;
+      starScore.textContent = score;
+      event.target.classList.add('star-pop');
+      setTimeout(() => event.target.classList.remove('star-pop'), 300);
+    }
+
+    factButton.addEventListener('click', showFunFact);
+    stars.forEach(star => star.addEventListener('click', addStarPoints));
+  </script>
+</body>
+</html>
