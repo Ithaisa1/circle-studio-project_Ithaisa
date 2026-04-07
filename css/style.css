@@ -268,16 +268,17 @@ textarea {
 .projects-container,
 .services-container {
   display: grid;
+  padding: 15px;
   gap: 30px;
 }
 
 .project-card,
 .services-card {
   background: var(--White);
-  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 18px 35px rgba(24, 40, 75, 0.08);
   text-align: left;
+  
 }
 
 .project-card img {
@@ -324,7 +325,7 @@ textarea {
 
 .project-detail-card {
   display: grid;
-  gap: 30px;
+  gap: 30px;;
   background: var(--White);
   border-radius: 24px;
   overflow: hidden;
