@@ -74,7 +74,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 32px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   max-width: 940px;
   margin: 0 auto;
 }
@@ -99,8 +99,6 @@
 
 .recent-projects h2,
 .services h2 {
-  text-align: left;
-  font-size: 50px;
   margin-bottom: 30px;
 }
 
@@ -274,6 +272,109 @@
   color: var(--NeutralDark);
 }
 
+@media (max-width: 767px) {
+  .hero {
+    margin: 32px auto 24px;
+    padding-bottom: 24px;
+  }
+
+  .hero-content h1,
+  .hero-content h3 {
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 16px;
+  }
+
+  .hero-content h3 {
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .hero-images {
+    margin-top: 28px;
+  }
+
+  .clients {
+    margin: 40px 0;
+  }
+
+  .logos {
+    justify-content: center;
+    gap: 20px 28px;
+  }
+
+  .clients img,
+  .logos img {
+    height: 24px;
+  }
+
+  .recent-projects,
+  .services {
+    padding-bottom: 10px;
+  }
+
+  .recent-projects h2,
+  .services h2 {
+    margin-bottom: 20px;
+  }
+
+  .projects-container,
+  .services-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .project-card img {
+    height: 200px;
+  }
+
+  .project-inner-card,
+  .services-card {
+    padding: 20px;
+  }
+
+  .testimonial {
+    margin: 40px auto;
+    padding: 44px 18px;
+    border-radius: 24px;
+    background-size: cover;
+  }
+
+  .testimonial-text {
+    margin-bottom: 28px;
+  }
+
+  .testimonial-text h3,
+  .testimonial-text p {
+    text-align: center;
+  }
+
+  .testimonial-text p {
+    font-size: 0.98rem;
+  }
+
+  .newsletter {
+    margin: 40px auto;
+    padding: 48px 18px;
+  }
+
+  .newsletter-inner {
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .newsletter-inner form {
+    max-width: none;
+  }
+}
+
 /* Media Queries */
 
 @media (min-width: 768px) {
@@ -349,6 +450,16 @@
     align-items: center;
     gap: 20px;
   }
+
+  .newsletter-inner form {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .newsletter-inner button {
+    width: auto;
+    min-width: 180px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -372,5 +483,19 @@
 
   .clients img {
     height: 38px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .projects-container,
+  .services-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card:last-child,
+  .services-card:last-child {
+    grid-column: span 2;
+    max-width: 420px;
+    justify-self: center;
   }
 }

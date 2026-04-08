@@ -12,15 +12,22 @@
 
     <!-- Header -->
 
-    <header class="site-header">
+  <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html"><img class="logo" src="../assets/logos/circle.svg" alt="Circle"></a>
-      <nav class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="../index.html#services">Services</a>
-      </nav>
-      <a class="btn btn-secondary" href="#contact">Contact Us</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+      <div class="header-menu" id="main-menu">
+        <nav class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="../index.html#services">Services</a>
+        </nav>
+        <a class="btn btn-secondary" href="#contact">Contact Us</a>
+      </div>
     </div>
   </header>
 
@@ -29,12 +36,10 @@
 
   <section id="projects">
       <h1>Projects</h1>
-      <div id="projects-list" class="projects-container"></div>
 
       <!-- Project detail -->
 
       <div id="project-detail" class="project-detail" aria-hidden="true">
-        <a class="btn btn-secondary" id="detail-back" href="projects.html"> Back to all projects</a>
         <div class="project-detail-card">
           <img id="detail-image" src="" alt="Project detail image">
           <div class="project-detail-content">
@@ -45,6 +50,8 @@
           </div>
         </div>
       </div>
+      <h2 id="other-projects-title" class="other-projects-title" hidden>Other Projects</h2>
+      <div id="projects-list" class="projects-container"></div>
     </section>
 
   
@@ -79,6 +86,10 @@
       <p>2972 Westheimer Rd. Santa Ana,<br>Illinois 85486</p>
     </div>
   </footer>
+  <button id="scroll-top-btn" class="scroll-top-btn" type="button" aria-label="Back to top">↑</button>
+  <script src="../js/header-scroll.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/scroll-top.js"></script>
   <script src="../js/projects.js"></script>
 </body>
 </html>

@@ -14,12 +14,19 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html"><img class="logo" src="assets/logos/circle.svg" alt="Circle"></a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-      </nav>
-      <a class="btn btn-secondary" href="./pages/contact.html">Contact Us</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+      <div class="header-menu" id="main-menu">
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+        </nav>
+        <a class="btn btn-secondary" href="./pages/contact.html">Contact Us</a>
+      </div>
     </div>
   </header>
 
@@ -61,32 +68,7 @@
     <!-- Recent projects -->
     <section id="projects" class="recent-projects">
       <h2>Recent Projects</h2>
-      <div class="projects-container" id="projects-container">
-        <article class="project-card">
-          <img src="assets/projects-section/1.jpg" alt="Project Simplify">
-          <div class="project-inner-card">
-            <h3 class="project-title">Simplify</h3>
-            <p class="project-description">UI Design & App Development</p>
-            <a class="learn-more" href="pages/projects.html?id=1" target="_blank">Learn more</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="assets/projects-section/2.jpg" alt="Project Dashcoin">
-          <div class="project-inner-card">
-            <h3 class="project-title">Dashcoin</h3>
-            <p class="project-description">Web Development</p>
-            <a class="learn-more" href="pages/projects.html?id=2">Learn more</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="assets/projects-section/3.jpg" alt="Project Vectorify">
-          <div class="project-inner-card">
-            <h3 class="project-title">Vectorify</h3>
-            <p class="project-description">User Experience Design</p>
-            <a class="learn-more" href="pages/projects.html?id=3">Learn more</a>
-          </div>
-        </article>
-      </div>
+      <div class="projects-container" id="projects-container"></div>
     </section>
 
     <!-- Testimonial -->
@@ -171,6 +153,10 @@
       <p>2972 Westheimer Rd. Santa Ana,<br>Illinois 85486</p>
     </div>
   </footer>
+  <button id="scroll-top-btn" class="scroll-top-btn" type="button" aria-label="Back to top">↑</button>
+  <script src="js/header-scroll.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/scroll-top.js"></script>
   <script src = "js/projects.js"></script>
 </body>
 </html>
