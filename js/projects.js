@@ -1,5 +1,15 @@
+/**
+ * URL base de la API remota que devuelve los proyectos.
+ */
 const API_URL = "https://raw.githubusercontent.com/ironhack-jc/mid-term-api/main/projects";
 
+/**
+ * Referencias a elementos del DOM utilizados en home y projects.
+ *
+ * - `homeProjectsContainer` se usa en la home.
+ * - `projectsList` se usa en la pagina de proyectos.
+ * - `projectDetail` y el resto de elementos se usan en la vista detalle.
+ */
 const homeProjectsContainer = document.getElementById("projects-container");
 const projectsList = document.getElementById("projects-list");
 const projectDetail = document.getElementById("project-detail");
@@ -11,6 +21,13 @@ const detailSubtitle = document.getElementById("detail-subtitle");
 const detailDescription = document.getElementById("detail-description");
 const detailFeatures = document.getElementById("detail-features");
 
+/**
+ * Espera a que cargue la ventana y entonces hace la peticion a la API.
+ *
+ * Segun la pagina:
+ * - en home pinta los 3 primeros proyectos
+ * - en projects pinta el listado completo o el detalle
+ */
 window.onload = function () {
   fetch(API_URL)
     .then((response) => response.json())
@@ -36,6 +53,11 @@ window.onload = function () {
     });
 };
 
+/**
+ * Renderiza los tres proyectos recientes en la home.
+ *
+ * @param {Array<Object>} projects
+ */
 function renderHomeProjects(projects) {
   homeProjectsContainer.innerHTML = projects
     .map(function (project) {
@@ -44,6 +66,15 @@ function renderHomeProjects(projects) {
     .join("");
 }
 
+/**
+ * Gestiona el comportamiento de la pagina de proyectos.
+ *
+ * Casos:
+ * - si no hay `id`, muestra el listado completo
+ * - si hay `id`, muestra el detalle del proyecto y otros proyectos
+ *
+ * @param {Array<Object>} projects
+ */
 function renderProjectsPage(projects) {
   const parameters = new URLSearchParams(window.location.search);
   const projectId = parameters.get("id");
@@ -86,6 +117,11 @@ function renderProjectsPage(projects) {
     .join("");
 }
 
+/**
+ * Rellena el bloque de detalle del proyecto seleccionado.
+ *
+ * @param {Object} project
+ */
 function renderProjectDetail(project) {
   detailImage.src = project.image;
   detailImage.alt = project.name;
@@ -99,6 +135,13 @@ function renderProjectDetail(project) {
   projectDetail.setAttribute("aria-hidden", "false");
 }
 
+/**
+ * Genera el HTML de una tarjeta de proyecto reutilizable.
+ *
+ * @param {Object} project
+ * @param {string} basePath
+ * @returns {string}
+ */
 function createProjectCard(project, basePath) {
   return `
     <article class="project-card">

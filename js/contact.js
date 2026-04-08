@@ -1,3 +1,10 @@
+/**
+ * Referencias principales del formulario de contacto.
+ *
+ * - `form` representa el formulario completo.
+ * - Cada input se guarda por separado para validarlo de forma individual.
+ * - `inputs` permite recorrer todos los campos cuando hay que limpiar estados.
+ */
 const form = document.querySelector(".contact-form");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
@@ -5,6 +12,15 @@ const phoneInput = document.getElementById("phone");
 const messageInput = document.getElementById("message");
 const inputs = [nameInput, emailInput, phoneInput, messageInput];
 
+/**
+ * Evento principal del formulario.
+ *
+ * Flujo:
+ * 1. Evita el envio por defecto.
+ * 2. Limpia errores previos.
+ * 3. Ejecuta todas las validaciones.
+ * 4. Si todo es correcto, muestra un mensaje de exito y reinicia el formulario.
+ */
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -35,11 +51,24 @@ form.addEventListener("submit", function (event) {
   }
 });
 
+/**
+ * Validacion en tiempo real:
+ * cada campo se comprueba mientras el usuario escribe.
+ */
 nameInput.addEventListener("input", validateName);
 emailInput.addEventListener("input", validateEmail);
 phoneInput.addEventListener("input", validatePhone);
 messageInput.addEventListener("input", validateMessage);
 
+/**
+ * Valida el campo nombre.
+ *
+ * Reglas:
+ * - no puede estar vacio
+ * - no puede ser "ironhack"
+ *
+ * @returns {boolean}
+ */
 function validateName() {
   const value = nameInput.value.trim();
 
@@ -57,6 +86,15 @@ function validateName() {
   return true;
 }
 
+/**
+ * Valida el campo email.
+ *
+ * Reglas:
+ * - no puede estar vacio
+ * - debe cumplir un formato basico de email
+ *
+ * @returns {boolean}
+ */
 function validateEmail() {
   const value = emailInput.value.trim();
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -75,6 +113,16 @@ function validateEmail() {
   return true;
 }
 
+/**
+ * Valida el campo telefono.
+ *
+ * Reglas:
+ * - no puede estar vacio
+ * - solo acepta numeros y simbolos tipicos de telefono
+ * - debe tener al menos 9 caracteres
+ *
+ * @returns {boolean}
+ */
 function validatePhone() {
   const value = phoneInput.value.trim();
   const phonePattern = /^[0-9+\-()\s]+$/;
@@ -98,6 +146,15 @@ function validatePhone() {
   return true;
 }
 
+/**
+ * Valida el campo mensaje.
+ *
+ * Reglas:
+ * - no puede estar vacio
+ * - debe tener una longitud minima
+ *
+ * @returns {boolean}
+ */
 function validateMessage() {
   const value = messageInput.value.trim();
 
@@ -115,6 +172,17 @@ function validateMessage() {
   return true;
 }
 
+/**
+ * Muestra un error visual en un campo.
+ *
+ * Acciones:
+ * - elimina un error anterior del mismo input
+ * - crea el mensaje de error debajo del campo
+ * - aplica borde rojo
+ *
+ * @param {HTMLElement} input
+ * @param {string} message
+ */
 function showError(input, message) {
   removeError(input);
 
@@ -129,11 +197,21 @@ function showError(input, message) {
   input.parentElement.appendChild(error);
 }
 
+/**
+ * Marca un campo como valido.
+ *
+ * @param {HTMLElement} input
+ */
 function showSuccess(input) {
   removeError(input);
   input.style.border = "1px solid green";
 }
 
+/**
+ * Elimina el mensaje de error asociado a un campo concreto, si existe.
+ *
+ * @param {HTMLElement} input
+ */
 function removeError(input) {
   const existingError = input.parentElement.querySelector(".error-message");
 
@@ -142,6 +220,10 @@ function removeError(input) {
   }
 }
 
+/**
+ * Limpia todos los mensajes de error visibles
+ * y restaura el borde original de todos los inputs.
+ */
 function clearErrors() {
   const errors = document.querySelectorAll(".error-message");
 
