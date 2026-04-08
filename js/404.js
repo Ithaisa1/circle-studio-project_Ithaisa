@@ -19,7 +19,7 @@ const facts = [
   '— ¿Qué le dice un ganso a una gansa= - Ven gansa',
   '— Tienes que decir dos palabras que tengan tilde. - Fácil Clotilde y Matilde',
   '— ¿Cuál es el masculino de oca? - Parchís',
-  '— Doctor soy asmátic, ¿es grave? - No es esdrújula',
+  '— Doctor soy asmático, ¿es grave? - No es esdrújula',
   '— En Hawai no te hospedan, te alohan',
   '— Soy celíaca. Encantado, yo Antoniaco',
   '— Oiga, usted está empadronado?  No, qué va, es mi carácter… ',

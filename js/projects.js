@@ -94,7 +94,7 @@ function renderProjectsPage(projects) {
 
   if (!selectedProject) {
     alert("This project does not exist. You will be redirected to the 404 page.");
-    window.location.href = "404.html";
+    window.location.href = "../404.html";
     return;
   }
 
