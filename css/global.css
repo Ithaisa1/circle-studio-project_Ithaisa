@@ -54,6 +54,35 @@ input[type="email"]::placeholder {
   text-align: center;
 }
 
+h1{
+    text-align: left;
+    font-size: 60px;
+    color: var(--NeutralDark);
+    margin: 20px;
+    font-weight: 700;
+    
+}
+
+h2{
+    font-size: 50px;
+    color: var(--NeutralDark);
+    margin: 20px;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 40px;
+    color: var(--NeutralDark);
+    margin: 20px;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 30px;
+    color: var(--NeutralDark);
+    margin: 20px;
+    font-weight: 400;}
+
 /* layout */
 
 .container {
