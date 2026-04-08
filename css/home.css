@@ -1,0 +1,376 @@
+.hero {
+  margin: 60px auto;
+  max-width: 1180px;
+  padding-bottom: 50px;
+}
+
+.hero-content {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 20px;
+  color: var(--NeutralDark);
+  text-transform: capitalize;
+}
+
+.hero-content h3 {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--NeutralDark);
+  margin-bottom: 35px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* hero images */
+
+.hero-images {
+  position: relative;
+  margin: 40px auto 0;
+  max-width: 900px;
+}
+
+.img-hero {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-card {
+  position: absolute;
+  width: 240px;
+  max-width: 240px;
+  display: none;
+}
+
+.hero-card.top {
+  top: -20px;
+  left: -10%;
+}
+
+.hero-card.bottom {
+  bottom: -20px;
+  right: -10%;
+}
+
+/* clients */
+
+.clients {
+  margin: 70px 0;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: nowrap;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.clients img,
+.logos img {
+  filter: grayscale(1);
+  width: auto;
+  height: 32px;
+}
+
+.clients img:hover,
+.logos img:hover {
+  filter: grayscale(0);
+}
+
+/* recent projects */
+.recent-projects,
+.services {
+  padding: 0 0 20px;
+}
+
+.recent-projects h2,
+.services h2 {
+  text-align: left;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.projects-container,
+.services-container {
+  display: grid;
+  padding: 15px;
+  gap: 30px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.project-card,
+.services-card {
+  background: var(--White);
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 18px 35px rgba(24, 40, 75, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.project-card img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-inner-card,
+.services-card {
+  padding: 24px;
+}
+
+.project-title,
+.services-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.project-description,
+.services-card p {
+  font-size: 0.975rem;
+  line-height: 1.8;
+  color: var(--NeutralMedium);
+  margin-bottom: 24px;
+}
+
+.project-card .learn-more,
+.services-card .learn-more {
+  color: var(--Primary);
+  font-weight: 700;
+}
+
+.project-card:hover,
+.services-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(24, 40, 75, 0.14);
+}
+
+/* testimonials */
+
+.testimonial {
+  position: relative;
+  margin: 60px auto;
+  padding: 70px 20px;
+  background: var(--NeutralDark) url("../assets/testimonial-section/orbit.png") no-repeat center/contain;
+  border-radius: 32px;
+  color: var(--White);
+  overflow: hidden;
+}
+
+.testimonial-memojis {
+  display: none;
+}
+
+.testimonial-text {
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.testimonial-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.testimonial-text p {
+  color: var(--SecondaryLight);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.testimonial-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.testimonial-profile-img {
+  width: 80px;
+  height: 80px;
+  
+  border-radius: 60%;
+  
+}
+
+.testimonial-profile-info .name {
+  text-align: center;
+  font-weight: 700;
+  color: var(--PrimaryLight);
+}
+
+.testimonial-profile-info .origin {
+  text-align: center;
+  color: var(--White);
+}
+
+/* newsletter */
+
+.newsletter {
+  margin: 50px auto;
+  padding: 90px 24px;
+  background-color: var(--SecondaryLight);
+  box-shadow: 0 18px 35px rgba(24, 40, 75, 0.08);
+}
+
+.newsletter-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.newsletter-inner form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.newsletter-inner input[type="email"] {
+  width: 100%;
+  padding: 16px 16px 16px 48px;
+  background: url("../assets/newsletter/icon/mail.svg") no-repeat left 16px center / 24px 24px;
+  border: none;
+  background-color: var(--Background);
+  font-size: 0.95rem;
+  color: var(--NeutralMedium);
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+
+.newsletter-inner button {
+  width: 100%;
+}
+
+.newsletter-inner p {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--Black);
+}
+
+.newsletter-inner h2 {
+  margin: 0;
+  color: var(--NeutralDark);
+}
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    column-gap: 40px;
+  }
+
+  .hero-content {
+    text-align: left;
+    margin: 0;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .clients {
+    margin-top: 120px;
+  }
+
+  .projects-container,
+  .services-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .testimonial {
+    padding: 100px 60px;
+  }
+
+  .testimonial-memojis {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .testimonial-memojis img {
+    position: absolute;
+    width: 90px;
+  }
+
+  .testimonial-memoji1 {
+    top: 10%;
+    left: 5%;
+  }
+
+  .testimonial-memoji2 {
+    top: 8%;
+    right: 6%;
+  }
+
+  .testimonial-memoji3 {
+    bottom: 10%;
+    left: 6%;
+  }
+
+  .testimonial-memoji4 {
+    bottom: 12%;
+    right: 10%;
+  }
+
+  .testimonial-profile {
+    justify-content: flex-start;
+  }
+
+  .newsletter-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-images {
+    margin-top: 0;
+  }
+
+  .hero-card {
+    display: block;
+  }
+
+  .hero-card.top {
+    top: -30px;
+    left: -14%;
+  }
+
+  .hero-card.bottom {
+    bottom: -40px;
+    right: -14%;
+  }
+
+  .clients img {
+    height: 38px;
+  }
+}
