@@ -45,7 +45,7 @@ form.addEventListener("submit", function (event) {
   }
 
   if (isValid) {
-    alert("Form submitted successfully");
+    showSuccessPopup();
     form.reset();
     clearErrors();
   }
@@ -234,4 +234,41 @@ function clearErrors() {
   inputs.forEach(function (input) {
     input.style.border = "";
   });
+}
+
+/**
+ * Muestra un popup centrado de confirmacion
+ * cuando el formulario se ha validado correctamente.
+ */
+function showSuccessPopup() {
+  const existingPopup = document.querySelector(".success-popup-overlay");
+
+  if (existingPopup) {
+    existingPopup.remove();
+  }
+
+  const overlay = document.createElement("div");
+  overlay.className = "success-popup-overlay";
+
+  overlay.innerHTML = `
+    <div class="success-popup-card" role="alert" aria-live="assertive">
+      <div class="success-popup-icon">&#10003;</div>
+      <h2>El formulario se ha enviado correctamente</h2>
+      <p>Gracias por contactarnos.</p>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  setTimeout(function () {
+    overlay.classList.add("is-visible");
+  }, 10);
+
+  setTimeout(function () {
+    overlay.classList.remove("is-visible");
+
+    setTimeout(function () {
+      overlay.remove();
+    }, 300);
+  }, 2200);
 }

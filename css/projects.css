@@ -12,10 +12,10 @@
   width: min(100%, 960px);
   display: grid;
   gap: 30px;
-  background: var(--White);
+  background: var(--Surface);
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 18px 35px rgba(24, 40, 75, 0.08);
+  box-shadow: var(--ShadowSoft);
 }
 
 #project-detail[aria-hidden="true"] {
@@ -73,10 +73,10 @@
 
 .project-card,
 .services-card {
-  background: var(--White);
+  background: var(--Surface);
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 18px 35px rgba(24, 40, 75, 0.08);
+  box-shadow: var(--ShadowSoft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
@@ -132,7 +132,7 @@
   margin: 50px 100px;
   padding: 90px 24px;
   background-color: var(--SecondaryLight);
-  box-shadow: 0 18px 35px rgba(24, 40, 75, 0.08);
+  box-shadow: var(--ShadowSoft);
 }
 
 .newsletter-inner {

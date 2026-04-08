@@ -15,6 +15,7 @@
   margin-bottom: 20px;
   color: var(--NeutralDark);
   text-transform: capitalize;
+  text-align: left;
 }
 
 .hero-content h3 {
@@ -113,10 +114,10 @@
 
 .project-card,
 .services-card {
-  background: var(--White);
+  background: var(--Surface);
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 18px 35px rgba(24, 40, 75, 0.08);
+  box-shadow: var(--ShadowSoft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
@@ -182,6 +183,7 @@
 .testimonial-text h3 {
   font-size: 2.2rem;
   margin-bottom: 20px;
+  color: var(--White);
 }
 
 .testimonial-text p {
@@ -224,7 +226,7 @@
   margin: 50px auto;
   padding: 90px 24px;
   background-color: var(--SecondaryLight);
-  box-shadow: 0 18px 35px rgba(24, 40, 75, 0.08);
+  box-shadow: var(--ShadowSoft);
 }
 
 .newsletter-inner {
@@ -270,6 +272,36 @@
 .newsletter-inner h2 {
   margin: 0;
   color: var(--NeutralDark);
+}
+
+[data-theme="dark"] .testimonial {
+  background: linear-gradient(180deg, #fff1a8 0%, #ffe169 100%);
+}
+
+[data-theme="dark"] .testimonial-text h3 {
+  color: #111826;
+}
+
+[data-theme="dark"] .testimonial-text p {
+  color: #30456f;
+}
+
+[data-theme="dark"] .testimonial-profile-info .name {
+  color: #2747b5;
+}
+
+[data-theme="dark"] .testimonial-profile-info .origin {
+  color: #111826;
+}
+
+[data-theme="dark"] .newsletter-inner input[type="email"] {
+  background: url("../assets/newsletter/icon/mail.svg") no-repeat left 16px center / 24px 24px;
+  background-color: #ffffff;
+  color: #292e47;
+}
+
+[data-theme="dark"] .newsletter-inner input[type="email"]::placeholder {
+  color: #6b708d;
 }
 
 @media (max-width: 767px) {

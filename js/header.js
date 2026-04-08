@@ -4,10 +4,53 @@
  * - `siteHeader` controla el comportamiento sticky.
  * - `menuToggle` es el boton hamburguesa.
  * - `headerMenu` es el panel desplegable en tablet y mobile.
+ * - `themeToggle` alterna entre modo claro y oscuro.
  */
 const siteHeader = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const headerMenu = document.querySelector(".header-menu");
+const themeToggle = document.getElementById("theme-toggle");
+
+/**
+ * Gestion del tema visual:
+ * guarda la preferencia del usuario y alterna entre modo claro y oscuro.
+ */
+if (themeToggle) {
+  const savedTheme = localStorage.getItem("theme");
+  const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+  const initialTheme = savedTheme || preferredTheme;
+
+  document.documentElement.setAttribute("data-theme", initialTheme);
+  updateThemeToggleLabel(initialTheme);
+
+  themeToggle.addEventListener("click", function () {
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    updateThemeToggleLabel(nextTheme);
+  });
+}
+
+/**
+ * Actualiza el icono y la etiqueta accesible del boton de tema.
+ *
+ * @param {string} theme
+ */
+function updateThemeToggleLabel(theme) {
+  if (!themeToggle) {
+    return;
+  }
+
+  themeToggle.textContent = theme === "dark" ? "\u2600" : "\u263E";
+  themeToggle.setAttribute(
+    "aria-label",
+    theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+  );
+}
 
 /**
  * Bloque de header sticky:

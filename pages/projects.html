@@ -10,8 +10,7 @@
 </head>
 <body>
 
-    <!-- Header -->
-
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html"><img class="logo" src="../assets/logos/circle.svg" alt="Circle"></a>
@@ -26,53 +25,51 @@
           <a href="#projects">Projects</a>
           <a href="../index.html#services">Services</a>
         </nav>
-        <a class="btn btn-secondary" href="../pages/contact.html">Contact Us</a>
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+          <a class="btn btn-secondary" href="../pages/contact.html">Contact Us</a>
+        </div>
       </div>
     </div>
   </header>
 
-
   <!-- Projects -->
-
   <section id="projects">
-      <h1>Projects</h1>
+    <h1>Projects</h1>
 
-      <!-- Project detail -->
-
-      <div id="project-detail" class="project-detail" aria-hidden="true">
-        <div class="project-detail-card">
-          <img id="detail-image" src="" alt="Project detail image">
-          <div class="project-detail-content">
-            <h2 id="detail-title"></h2>
-            <p id="detail-subtitle" class="project-description"></p>
-            <p id="detail-description"></p>
-            <ul id="detail-features" class="project-features"></ul>
-          </div>
+    <!-- Project detail -->
+    <div id="project-detail" class="project-detail" aria-hidden="true">
+      <div class="project-detail-card">
+        <img id="detail-image" src="" alt="Project detail image">
+        <div class="project-detail-content">
+          <h2 id="detail-title"></h2>
+          <p id="detail-subtitle" class="project-description"></p>
+          <p id="detail-description"></p>
+          <ul id="detail-features" class="project-features"></ul>
         </div>
       </div>
-      <h2 id="other-projects-title" class="other-projects-title" hidden>Other Projects</h2>
-      <div id="projects-list" class="projects-container"></div>
-    </section>
+    </div>
 
-  
-    <!-- Newsletter -->
+    <h2 id="other-projects-title" class="other-projects-title" hidden>Other Projects</h2>
+    <div id="projects-list" class="projects-container"></div>
+  </section>
 
-    <section id="contact" class="newsletter">
-      <div class="newsletter-inner">
-        <div>
-          <h2>Do you have any questions?</h2>
-          <p>Let us help you!</p>
-        </div>
-        <form action="#">
-          <input type="email" placeholder="Enter your email" required>
-          <button class="btn btn-primary" type="submit">Subscribe</button>
-        </form>
+  <!-- Newsletter -->
+  <section id="contact" class="newsletter">
+    <div class="newsletter-inner">
+      <div>
+        <h2>Do you have any questions?</h2>
+        <p>Let us help you!</p>
       </div>
-    </section>
+      <form action="#">
+        <input type="email" placeholder="Enter your email" required>
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
 
-    <!-- Footer -->
-
-    <footer class="site-footer">
+  <!-- Footer -->
+  <footer class="site-footer">
     <div class="container footer-inner">
       <a href="../index.html"><img class="logo" src="../assets/logos/circle.svg" alt="Circle"></a>
       <nav>
@@ -86,7 +83,7 @@
       <p>2972 Westheimer Rd. Santa Ana,<br>Illinois 85486</p>
     </div>
   </footer>
-  <button id="scroll-top-btn" class="scroll-top-btn" type="button" aria-label="Back to top">↑</button>
+  <button id="scroll-top-btn" class="scroll-top-btn" type="button" aria-label="Back to top">&uarr;</button>
   <script src="../js/header.js"></script>
   <script src="../js/scroll-top.js"></script>
   <script src="../js/projects.js"></script>
