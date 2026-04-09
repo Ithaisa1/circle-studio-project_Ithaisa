@@ -111,6 +111,15 @@ body::after {
   animation: ambientFloatTwo 24s ease-in-out infinite alternate;
 }
 
+.cursor-trail {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
 @keyframes ambientFloatOne {
   from {
     transform: translate3d(0, 0, 0) scale(1);
@@ -847,5 +856,9 @@ h4{
   body::before,
   body::after {
     animation: none;
+  }
+
+  .cursor-trail {
+    display: none;
   }
 }
