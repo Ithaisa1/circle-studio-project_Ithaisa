@@ -306,17 +306,7 @@ Los estilos se organizaron pensando en estos cortes principales:
 2. Abre la carpeta del proyecto en tu editor.
 3. Ejecuta la web con Live Server o abre `index.html` en el navegador.
 
-## Objetivos de aprendizaje
 
-- Practicar HTML semantico.
-- Organizar una web multipagina.
-- Trabajar con CSS modular por pagina.
-- Implementar responsive design real.
-- Consumir una API externa con `fetch()`.
-- Manipular el DOM con JavaScript.
-- Validar formularios con reglas personalizadas.
-- Mejorar la experiencia de usuario con microinteracciones.
-- Crear un header reutilizable y adaptable.
 
 ## Mejoras futuras posibles
 
