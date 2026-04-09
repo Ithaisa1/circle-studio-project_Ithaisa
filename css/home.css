@@ -152,62 +152,6 @@
   margin-bottom: 30px;
 }
 
-.projects-container,
-.services-container {
-  display: grid;
-  padding: 15px;
-  gap: 30px;
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.project-card,
-.services-card {
-  background: var(--Surface);
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: var(--ShadowSoft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-}
-
-.project-card img {
-  height: 220px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.project-inner-card,
-.services-card {
-  padding: 24px;
-}
-
-.project-title,
-.services-card h4 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-
-.project-description,
-.services-card p {
-  font-size: 0.975rem;
-  line-height: 1.8;
-  color: var(--NeutralMedium);
-  margin-bottom: 24px;
-}
-
-.project-card .learn-more,
-.services-card .learn-more {
-  color: var(--Primary);
-  font-weight: 700;
-}
-
-.project-card:hover,
-.services-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 60px rgba(24, 40, 75, 0.14);
-}
-
 /* testimonials */
 
 .testimonial {
@@ -345,22 +289,6 @@
     margin-bottom: 20px;
   }
 
-  .projects-container,
-  .services-container {
-    grid-template-columns: 1fr;
-    padding: 0;
-    gap: 20px;
-  }
-
-  .project-card img {
-    height: 200px;
-  }
-
-  .project-inner-card,
-  .services-card {
-    padding: 20px;
-  }
-
   .testimonial {
     margin: 40px auto;
     padding: 44px 18px;
@@ -405,11 +333,6 @@
 
   .clients {
     margin-top: 120px;
-  }
-
-  .projects-container,
-  .services-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .testimonial {
@@ -485,11 +408,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-  .projects-container,
-  .services-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .project-card:last-child,
   .services-card:last-child {
     grid-column: span 2;

@@ -62,63 +62,6 @@
   margin-bottom: 10px;
 }
 
-.projects-container,
-.services-container {
-  display: grid;
-  padding: 15px;
-  gap: 30px;
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.project-card,
-.services-card {
-  background: var(--Surface);
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: var(--ShadowSoft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-}
-
-.project-card img {
-  height: 220px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.project-inner-card,
-.services-card {
-  padding: 24px;
-}
-
-.project-title,
-.services-card h4 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-
-.project-description,
-.services-card p {
-  font-size: 0.975rem;
-  line-height: 1.8;
-  color: var(--NeutralMedium);
-  margin-bottom: 24px;
-}
-
-.project-card .learn-more,
-.services-card .learn-more {
-  color: var(--Primary);
-  font-weight: 700;
-}
-
-.project-card:hover,
-.services-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 60px rgba(24, 40, 75, 0.14);
-}
-
-
 /* Para que la imagen del detalle no se vea gigante y deforme */
 #detail-image {
   max-height: 500px;
@@ -127,20 +70,6 @@
 }
 
 @media (max-width: 767px) {
-  .projects-container {
-    grid-template-columns: 1fr;
-    padding: 0;
-    gap: 20px;
-  }
-
-  .project-card img {
-    height: 200px;
-  }
-
-  .project-inner-card {
-    padding: 20px;
-  }
-
   .project-detail {
     margin-top: 24px;
     padding: 0;
@@ -172,40 +101,9 @@
   }
 
 }
-
-
-.newsletter {
-  margin: 50px auto;
-  padding: 90px 24px;
-  background-color: var(--SecondaryLight);
-  box-shadow: var(--ShadowSoft);
-}
-
-.newsletter-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.newsletter-inner form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  max-width: 560px;
-}
-
-
 /* Media Queries */
 
 @media (min-width: 768px) {
-  .projects-container,
-  .services-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .project-detail-card {
     grid-template-columns: 1fr;
   }
@@ -213,10 +111,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-  .projects-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .projects-container .project-card {
     max-width: none;
     justify-self: stretch;
