@@ -49,8 +49,8 @@
 
 .hero-card {
   position: absolute;
-  width: 240px;
-  max-width: 240px;
+  width: 280px;
+  max-width: 280px;
   display: none;
 }
 
