@@ -6,10 +6,12 @@
  * - `headerMenu` es el panel desplegable en tablet y mobile.
  * - `themeToggle` alterna entre modo claro y oscuro.
  */
-const siteHeader = document.querySelector(".site-header");
-const menuToggle = document.querySelector(".menu-toggle");
-const headerMenu = document.querySelector(".header-menu");
-const themeToggle = document.getElementById("theme-toggle");
+
+function initHeader(){
+  const siteHeader = document.querySelector(".site-header");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const headerMenu = document.querySelector(".header-menu");
+  const themeToggle = document.getElementById("theme-toggle");
 
 /**
  * Gestion del tema visual:
@@ -153,4 +155,5 @@ if (menuToggle && headerMenu) {
       closeMenu();
     }
   });
+}
 }

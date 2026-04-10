@@ -280,4 +280,4 @@ Cada proyecto incluye informacion como:
 
 ## Autoria
 
-Proyecto desarrollado por Ithaisa.
+Proyecto desarrollado por Ithaisa Sánchez González.
