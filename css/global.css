@@ -336,6 +336,14 @@ h4{
   border-color: rgba(185, 203, 255, 0.16);
 }
 
+[data-theme="dark"] .menu-toggle-line {
+  background: white;
+}
+
+[data-theme="dark"] .menu-toggle[aria-expanded="true"] .menu-toggle-line {
+  background: #fff;
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
