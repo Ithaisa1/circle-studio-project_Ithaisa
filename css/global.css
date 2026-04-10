@@ -193,6 +193,7 @@ h4{
     margin: 20px;
     font-weight: 400;}
 
+
 /* layout */
 
 .container {
@@ -596,6 +597,12 @@ h4{
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+#copy {
+  margin: 0;
+  text-align: center;
+  color: var(--NeutralDark);
 }
 
 /* Media Queries */
