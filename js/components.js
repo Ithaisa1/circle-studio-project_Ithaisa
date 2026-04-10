@@ -24,9 +24,14 @@ async function loadComponent(id, file) {
     if (id === "footer-component") {
         initFooter();
     }
+
+    if(id === "newsletter-component") {
+        initNewsletter();
+    }
 }
 
 loadComponent("header-component", "/components/header.html");
 loadComponent("footer-component", "/components/footer.html");
+loadComponent("newsletter-component", "/components/newsletter.html");
 
 
