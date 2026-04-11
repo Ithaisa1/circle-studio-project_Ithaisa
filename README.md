@@ -1,6 +1,6 @@
 # Circle Studio
 
-Proyecto multipagina desarrollado con HTML, CSS y JavaScript para presentar un estudio digital ficticio. La aplicacion combina maquetacion responsive, componentes compartidos, consumo de datos desde una API externa y varias interacciones de interfaz.
+Proyecto multipagina desarrollado con HTML, CSS y JavaScript para presentar un estudio digital ficticio. La aplicacion combina maquetacion responsive, componentes HTML dinamicos, consumo de datos desde una API externa y varias interacciones de interfaz.
 
 ## Resumen
 
@@ -10,6 +10,7 @@ El proyecto incluye:
 - Pagina de proyectos con listado dinamico y vista detalle por `id`.
 - Pagina de contacto con validacion personalizada y popup de exito.
 - Pagina 404 con chistes aleatorios y minijuego de estrellas.
+- Componentes HTML dinamicos (header, footer, newsletter) cargados via JavaScript.
 - Header compartido con menu hamburguesa, tema claro/oscuro y estado sticky.
 - Boton global de scroll hacia arriba.
 - Fondo ambiental animado y estela de particulas siguiendo el cursor en dispositivos compatibles.
@@ -21,6 +22,9 @@ El proyecto incluye:
 - JavaScript
 - Fetch API
 - API JSON remota de Ironhack
+- Git y Github
+- Netlify (despliegue)
+- IA (para apoyo en el desarrollo)
 
 ## Estructura del proyecto
 
@@ -33,6 +37,10 @@ circle-studio-project_Ithaisa/
 |   |-- projects-section/
 |   |-- services-section/
 |   `-- testimonial-section/
+|-- components/
+|   |-- footer.html
+|   |-- header.html
+|   `-- newsletter.html
 |-- css/
 |   |-- 404.css
 |   |-- contact.css
@@ -42,6 +50,7 @@ circle-studio-project_Ithaisa/
 |   `-- style.css.backup
 |-- js/
 |   |-- 404.js
+|   |-- components.js
 |   |-- contact.js
 |   |-- cursor-trail.js
 |   |-- header.js
@@ -52,6 +61,7 @@ circle-studio-project_Ithaisa/
 |   `-- projects.html
 |-- 404.html
 |-- index.html
+|-- mid-term-project.fig
 `-- README.md
 ```
 
@@ -62,13 +72,15 @@ circle-studio-project_Ithaisa/
 - Pagina principal del proyecto.
 - Muestra la presentacion del estudio y sus secciones principales.
 - Carga proyectos recientes desde la API.
-- Incluye newsletter compartida dentro del mismo layout contenedor que el resto del contenido.
+- Carga componentes dinamicos (header, footer, newsletter) via JavaScript.
+- Incluye newsletter reutilizable cargada como componente.
 
 ### `pages/projects.html`
 
 - Muestra todos los proyectos o el detalle de uno concreto segun el parametro `id` en la URL.
 - Reutiliza el mismo componente visual de cards que la home.
-- Incluye el mismo bloque de newsletter que la home.
+- Carga componentes dinamicos (header, footer, newsletter) via JavaScript.
+- Incluye el newsletter reutilizable cargado como componente.
 
 Ejemplo:
 
@@ -81,12 +93,31 @@ pages/projects.html?id=1
 - Incluye el formulario de contacto.
 - Valida campos en tiempo real y al enviar.
 - Muestra un popup temporal de confirmacion si todos los datos son validos.
+- Carga componentes dinamicos (header, footer) via JavaScript.
 
 ### `404.html`
 
 - Pagina de error personalizada.
 - Incluye un boton para mostrar chistes aleatorios.
 - Incluye un minijuego simple con estrellas y marcador.
+
+## Componentes HTML
+
+### `components/header.html`
+
+- Header compartido con logo, navegacion y acciones.
+- Incluye menu hamburguesa para dispositivos moviles.
+- Boton de cambio de tema claro/oscuro.
+
+### `components/footer.html`
+
+- Footer compartido con logo, navegacion y direccion.
+- Informacion de copyright y contacto.
+
+### `components/newsletter.html`
+
+- Seccion de newsletter reutilizable.
+- Formulario de suscripcion con campo de email.
 
 ## Estilos CSS
 
@@ -130,6 +161,15 @@ Archivo base del proyecto. Centraliza:
 - Caja principal, botones, estrellas y animaciones del minijuego.
 
 ## JavaScript
+
+### `js/components.js`
+
+Carga los componentes HTML dinamicos:
+
+- Funcion `loadComponent(id, file)` para cargar archivos HTML via fetch.
+- Inserta el contenido en elementos con IDs especificados.
+- Inicializa header, footer y newsletter despues de cargar.
+- Carga header, footer y newsletter automaticamente al iniciar.
 
 ### `js/header.js`
 
@@ -200,7 +240,7 @@ Genera la estela de particulas del cursor:
 - Proyectos recientes cargados dinamicamente.
 - Testimonial destacado.
 - Servicios del estudio.
-- Newsletter reutilizable.
+- Newsletter reutilizable cargado como componente.
 
 ### Projects
 
@@ -208,12 +248,14 @@ Genera la estela de particulas del cursor:
 - Vista detalle por URL.
 - Seccion de otros proyectos.
 - Manejo de error para proyectos inexistentes.
+- Newsletter reutilizable cargado como componente.
 
 ### Contact
 
 - Validacion completa del formulario.
 - Errores visibles y feedback inmediato.
 - Popup de confirmacion al enviar correctamente.
+- Header y footer cargados como componentes.
 
 ### 404
 
@@ -222,10 +264,12 @@ Genera la estela de particulas del cursor:
 
 ### UI compartida
 
-- Header sticky reutilizable.
+- Header sticky reutilizable cargado como componente.
 - Menu hamburguesa responsive.
 - Tema claro/oscuro.
 - Boton scroll top.
+- Footer reutilizable cargado como componente.
+- Newsletter reutilizable cargado como componente.
 - Fondo con movimiento sutil.
 - Estela de particulas siguiendo el cursor.
 
@@ -266,17 +310,12 @@ Cada proyecto incluye informacion como:
 
 - Los estilos compartidos viven en `css/global.css`.
 - Los estilos especificos por pagina viven en su archivo correspondiente.
-- El newsletter esta centralizado en `global.css`.
+- Los componentes HTML reutilizables (header, footer, newsletter) estan en la carpeta `components/`.
+- La carga de componentes se gestiona via `js/components.js`.
+- El newsletter esta centralizado como componente HTML y sus estilos en `global.css`.
 - Las cards y grids reutilizables de proyectos y servicios tambien estan centralizadas en `global.css`.
 - La pagina 404 esta en la raiz del proyecto como `404.html`.
-
-## Mejoras futuras
-
-- Mover los estilos inline de validacion del formulario a clases CSS.
-- Añadir feedback visual para errores de red al cargar proyectos.
-- Reutilizar aun mas markup compartido entre paginas.
-- Mejorar la accesibilidad de la pagina 404 y del formulario.
-- Añadir filtros o categorias a la pagina de proyectos.
+- El archivo de diseño original esta en `mid-term-project.fig` (Figma).
 
 ## Autoria
 
